@@ -73,14 +73,14 @@ module.exports = "<canvas #canvas [height]=\"height\" [width]=\"width\" (mouseup
 /***/ 1147:
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"center\">\n    <app-control-bar></app-control-bar>\n</div>\n<div class=\"canvas-layer center\" [style.width.px]=\"width\" [style.height.px]=\"height\">\n    <base-image [height]=\"height\" [width]=\"width\"></base-image>\n    <drawable-canvas [height]=\"height\" [width]=\"width\"></drawable-canvas>\n</div>\n<div class=\"center\">\n<button mdl-button mdl-ripple (click)=\"submit($event)\">SUBMIT</button>\n</div>\n\n"
+module.exports = "\n<div class=\"center\">\n    <app-control-bar></app-control-bar>\n</div>\n<div class=\"canvas-layer center\" [style.width.px]=\"width\" [style.height.px]=\"height\">\n    <base-image [height]=\"height\" [width]=\"width\"></base-image>\n    <drawable-canvas [height]=\"height\" [width]=\"width\"></drawable-canvas>\n</div>\n<div class=\"center\">\n<button mdl-button mdl-ripple (click)=\"submit($event)\">SUBMIT</button>\n</div>\n<p class=\"center introduction\">\n    Please modify the annotation for the boundary outlined with green color. There is also a grey boundary with text label helps you.<br/>\n    For <strong>background</strong> area the segmentation wrongly included, drag the mouse to paint the correspinding area to <span style=\"color: red\">red</span><br>\n    For <strong>foreground</strong> area the segmentation wrongly excluded, click the switch to use green paint, and drag the mouse to paint the correspinding area <span style=\"color: green\">green</span><br>\n    Click <strong>SUBMIT</strong> below the image to submit<br>\n    Click <strong>RESET</strong> if you want to restart the annotation<br>\n    You could also adjust the brush size with the slider to obtain coarser or finer stroke.\n</p>\n\n"
 
 /***/ },
 
 /***/ 1148:
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"center\">\n    <base-image [height]=\"height\" [width]=\"width\"></base-image>\n</div>\n<div class=\"center\">\n    <button mdl-button mdl-ripple (click)=\"submit(true)\">YES</button>\n    <button mdl-button mdl-ripple (click)=\"submit(false)\">NO</button>\n</div>\n"
+module.exports = "\n<div class=\"center\">\n    <base-image [height]=\"height\" [width]=\"width\"></base-image>\n</div>\n<div class=\"center\">\n    <button mdl-button mdl-ripple (click)=\"submit(true)\">YES</button>\n    <button mdl-button mdl-ripple (click)=\"submit(false)\">NO</button>\n</div>\n\n<p class=\"center introduction\">\n    Please determine if the quality annotation for the boundary outlined with green color is acceptable. There is also a grey boundary with text label helps you.<br>\n    Click <strong>YES</strong> if you think the boundary is acceptable<br>\n    Click <strong>No</strong> if you think the boundary needs further annotation<br>\n</p>\n"
 
 /***/ },
 
@@ -788,11 +788,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ModificationLayerComponent = (function () {
     function ModificationLayerComponent(control, config) {
         var _this = this;
-        this.control = control;
         this.config = config;
         config.size.subscribe(function (size) {
             _this.width = size[0], _this.height = size[1];
         });
+        this.control = control;
     }
     ModificationLayerComponent.prototype.ngOnInit = function () {
     };
