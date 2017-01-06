@@ -133,9 +133,9 @@ var ConfigService = (function () {
                 var height = queryint('size height');
                 var width = queryint('size width');
                 var scale = 600 / width;
-                observer.next([width * scale, height * scale]);
-                _this.width = width * scale;
-                _this.height = height * scale;
+                _this.width = Math.floor(width * scale);
+                _this.height = Math.floor(height * scale);
+                observer.next([_this.width, _this.height]);
             });
         });
         this.bucket = new __WEBPACK_IMPORTED_MODULE_2_aws_sdk__["S3"]({ params: { Bucket: 'bucket-for-annotation-search' } });
