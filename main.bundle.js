@@ -216,14 +216,16 @@ var ConfigService = (function () {
         var form = document.createElement('form');
         __WEBPACK_IMPORTED_MODULE_3_lodash__["each"](pair, function (value, key) {
             var input = document.createElement('input');
-            input.type = "text";
+            input.type = 'text';
             input.value = value;
             input.name = key;
             form.appendChild(input);
         });
         var button = document.createElement('input');
         button.type = 'submit';
+        form.appendChild(button);
         form.action = this.destination;
+        form.method = 'POST';
         document.body.appendChild(form);
         form.submit();
     };
