@@ -124,6 +124,7 @@ var ConfigService = (function () {
         _a = decodeURIComponent(param.get('vid')).split(','), this.videoId = _a[0], this.objectId = _a[1], this.frameId = _a[2];
         this.assignmentId = param.get('assignmentId');
         this.destination = decodeURIComponent(param.get('turkSubmitTo'));
+        console.log(this.destination);
         this.page = param.get('page');
         this.size = __WEBPACK_IMPORTED_MODULE_5_rxjs__["Observable"].create(function (observer) {
             http.get(_this.getBoundingSrc()).subscribe(function (res) {
@@ -161,6 +162,7 @@ var ConfigService = (function () {
     };
     ConfigService.prototype.submitVerification = function (valid) {
         this.submitForm({
+            'formtype': 'verification',
             'assignmentId': this.assignmentId,
             'frameId': this.frameId,
             'objectId': this.objectId,
@@ -181,6 +183,7 @@ var ConfigService = (function () {
             this.submitS3(f_green, n_green),
         ]).then(function (_) {
             return _this.submitForm({
+                'formtype': 'modification',
                 'assignmentId': _this.assignmentId,
                 'frameId': _this.frameId,
                 'objectId': _this.objectId,
