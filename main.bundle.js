@@ -123,7 +123,8 @@ var ConfigService = (function () {
         var param = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* URLSearchParams */](window.location.search.slice(1));
         _a = decodeURIComponent(param.get('vid')).split(','), this.videoId = _a[0], this.objectId = _a[1], this.frameId = _a[2];
         this.assignmentId = param.get('assignmentId');
-        this.destination = decodeURIComponent(param.get('turkSubmitTo'));
+        // this.destination = decodeURIComponent(param.get('turkSubmitTo'));
+        this.destination = "https://workersandbox.mturk.com/mturk/externalSubmit";
         console.log(this.destination);
         this.page = param.get('page');
         this.size = __WEBPACK_IMPORTED_MODULE_5_rxjs__["Observable"].create(function (observer) {
