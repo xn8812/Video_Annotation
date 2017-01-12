@@ -172,14 +172,16 @@ var ConfigService = (function () {
             'valid': valid.toString(),
         }, this.destination);
     };
-    ConfigService.prototype.submitModification = function (image) {
+    ConfigService.prototype.submitModification = function (canvas) {
         var _this = this;
-        var _a = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__utils_Utils__["a" /* imgdata2mask */])(image), red = _a[0], green = _a[1];
-        var f_red = new File([red], 'red.mask', { type: 'text/binary' });
-        var f_green = new File([green], 'green.mask', { type: 'text/binary' });
+        var image = canvas.getContext('2d').getImageData(0, 0, canvas.height, canvas.height);
+        // const [red, green] = imgdata2mask(image);
+        // const f_red = new File([red], 'red.mask', { type: 'text/binary' });
+        // const f_green = new File([green], 'green.mask', { type: 'text/binary' });
         var path = "experimentdata/" + this.videoId + "-" + this.objectId + "-" + this.frameId + "-" + this.assignmentId;
-        var n_red = path + "/red.mask";
-        var n_green = path + "/green.mask";
+        // const n_red = `${path}/red.mask`;
+        // const n_green = `${path}/green.mask`;
+        var n_png = path + ".png";
         var metadata = {
             'formtype': 'modification',
             'assignmentId': this.assignmentId,
@@ -188,18 +190,25 @@ var ConfigService = (function () {
             'videoId': this.videoId,
             'height': image.height,
             'width': image.width,
-            'redfilepath': n_red,
-            'greenfilepath': n_green,
+            // 'redfilepath': n_red,
+            // 'greenfilepath': n_green,
+            'pngfilepath': n_png,
         };
-        var f_meta = new File([JSON.stringify(metadata)], 'meta.json', { type: 'text/json' });
+        // const f_meta = new File([JSON.stringify(metadata)], 'meta.json', {type: 'text/json'});
         var n_meta = path + "/meta.json";
-        Promise.all([
-            this.submitS3(f_red, n_red),
-            this.submitS3(f_green, n_green),
-            this.submitS3(f_meta, n_meta),
-        ]).then(function (_) {
-            return _this.submitForm(metadata, _this.destination);
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__utils_Utils__["a" /* toPromise */])(canvas.toBlob.bind(canvas), 'image/png', 1.0)
+            .then(function (f_png) { return _this.submitS3(f_png, n_png); }).then(function (_) {
+            // this.submitForm(metadata, this.destination);
+            console.log(n_png);
         });
+        // Promise.all([
+        //   this.submitS3(f_red, n_red),
+        //   this.submitS3(f_green, n_green),
+        //   this.submitS3(f_meta, n_meta),
+        //   toPromise<File>(canvas.toBlob.bind(canvas), 'image/png', 1.0)
+        //   .then((f_png)=> this.submitS3(f_png, n_png))
+        // ]).then(_ =>
+        //   this.submitForm(metadata, this.destination));
     };
     ConfigService.prototype.submitS3 = function (file, path) {
         return this.bucket.putObject({
@@ -812,7 +821,7 @@ var ModificationLayerComponent = (function () {
         this.control = control;
     }
     ModificationLayerComponent.prototype.submit = function () {
-        var image = this.control.reciever.image();
+        var image = this.control.reciever.canvas;
         this.config.submitModification(image);
     };
     ModificationLayerComponent = __decorate([
@@ -835,7 +844,8 @@ var ModificationLayerComponent = (function () {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ exports["a"] = imgdata2mask;
+/* unused harmony export imgdata2mask */
+/* harmony export (immutable) */ exports["a"] = toPromise;
 function imgdata2mask(img) {
     var rgba = img.data;
     var size = img.height * img.width;
@@ -852,6 +862,15 @@ function imgdata2mask(img) {
         green[div] += g << rem;
     }
     return [red, green];
+}
+function toPromise(fn) {
+    var args = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        args[_i - 1] = arguments[_i];
+    }
+    return new Promise(function (resolve, reject) {
+        fn.apply(void 0, [resolve].concat(args));
+    });
 }
 //# sourceMappingURL=/home/darwinsenior/workspace/segmentation/src/Utils.js.map
 
