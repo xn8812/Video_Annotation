@@ -178,8 +178,8 @@ var ConfigService = (function () {
         var f_red = new File([red], 'red.mask', { type: 'text/binary' });
         var f_green = new File([green], 'green.mask', { type: 'text/binary' });
         var path = "experimentdata/" + this.videoId + "-" + this.objectId + "-" + this.frameId + "-" + this.assignmentId;
-        var n_red = path + "/green.mask";
-        var n_green = path + "/red.mask";
+        var n_red = path + "/red.mask";
+        var n_green = path + "/green.mask";
         var metadata = {
             'formtype': 'modification',
             'assignmentId': this.assignmentId,
