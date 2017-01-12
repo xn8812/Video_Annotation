@@ -73,7 +73,7 @@ module.exports = "<canvas #canvas [height]=\"height\" [width]=\"width\" (mouseup
 /***/ 1180:
 /***/ function(module, exports) {
 
-module.exports = "\n<div class=\"center\">\n    <app-control-bar></app-control-bar>\n</div>\n<div class=\"canvas-layer center\" [style.width.px]=\"width\" [style.height.px]=\"height\">\n    <base-image [height]=\"height\" [width]=\"width\"></base-image>\n    <drawable-canvas [height]=\"height\" [width]=\"width\"></drawable-canvas>\n</div>\n<div class=\"center\">\n<button mdl-button mdl-ripple (click)=\"submit($event)\">SUBMIT</button>\n</div>\n<p class=\"center introduction\">\n    Please modify the annotation for the boundary outlined with green color. There is also a grey boundary with text label to help you.<br/>\n    For <strong>background</strong> area the segmentation wrongly included, drag the mouse to paint the correspinding area to <span style=\"color: red\">red</span><br>\n    For <strong>foreground</strong> area the segmentation wrongly excluded, click the switch to use green paint, and drag the mouse to paint the correspinding area <span style=\"color: green\">green</span><br>\n    Click <strong>SUBMIT</strong> below the image to submit<br>\n    Click <strong>RESET</strong> if you want to restart the annotation<br>\n    You could also adjust the brush size with the slider to obtain coarser or finer stroke.\n</p>\n\n"
+module.exports = "\n<div class=\"center\">\n    <app-control-bar></app-control-bar>\n</div>\n<div class=\"canvas-layer center\" [style.width.px]=\"width\" [style.height.px]=\"height\">\n    <base-image [height]=\"height\" [width]=\"width\"></base-image>\n    <drawable-canvas [height]=\"height\" [width]=\"width\"></drawable-canvas>\n</div>\n<div class=\"center\">\n    <button mdl-button mdl-ripple (click)=\"submit($event)\">\n        <span>SUBMIT</span>\n    </button>\n</div>\n<p class=\"center introduction\">\n    Please modify the annotation for the boundary outlined with green color. There is also a grey boundary with text label to help you.<br/>\n    For <strong>background</strong> area the segmentation wrongly included, drag the mouse to paint the correspinding area to <span style=\"color: red\">red</span><br>\n    For <strong>foreground</strong> area the segmentation wrongly excluded, click the switch to use green paint, and drag the mouse to paint the correspinding area <span style=\"color: green\">green</span><br>\n    Click <strong>SUBMIT</strong> below the image to submit<br>\n    Click <strong>RESET</strong> if you want to restart the annotation<br>\n    You could also adjust the brush size with the slider to obtain coarser or finer stroke.\n</p>\n\n"
 
 /***/ },
 
@@ -125,7 +125,6 @@ var ConfigService = (function () {
         this.assignmentId = param.get('assignmentId');
         // this.destination = decodeURIComponent(param.get('turkSubmitTo'));
         this.destination = "https://workersandbox.mturk.com/mturk/externalSubmit";
-        console.log(this.destination);
         this.page = param.get('page');
         this.size = __WEBPACK_IMPORTED_MODULE_5_rxjs__["Observable"].create(function (observer) {
             http.get(_this.getBoundingSrc()).subscribe(function (res) {
@@ -156,10 +155,12 @@ var ConfigService = (function () {
         var _a;
     }
     ConfigService.prototype.getFrameSrc = function () {
-        return window.location.pathname + "assets/" + this.videoId + "/" + this.objectId + "_" + this.frameId + ".png";
+        var name = window.location.pathname.replace('index.html', '');
+        return name + "assets/" + this.videoId + "/" + this.objectId + "_" + this.frameId + ".png";
     };
     ConfigService.prototype.getBoundingSrc = function () {
-        return window.location.pathname + "assets/" + this.videoId + "/00" + this.frameId + ".xml";
+        var name = window.location.pathname.replace('index.html', '');
+        return name + "assets/" + this.videoId + "/00" + this.frameId + ".xml";
     };
     ConfigService.prototype.submitVerification = function (valid) {
         this.submitForm({
@@ -179,21 +180,25 @@ var ConfigService = (function () {
         var path = "experimentdata/" + this.videoId + "-" + this.objectId + "-" + this.frameId + "-" + this.assignmentId;
         var n_red = path + "/green.mask";
         var n_green = path + "/red.mask";
+        var metadata = {
+            'formtype': 'modification',
+            'assignmentId': this.assignmentId,
+            'frameId': this.frameId,
+            'objectId': this.objectId,
+            'videoId': this.videoId,
+            'height': image.height,
+            'width': image.width,
+            'redfilepath': n_red,
+            'greenfilepath': n_green,
+        };
+        var f_meta = new File([JSON.stringify(metadata)], 'meta.json', { type: 'text/json' });
+        var n_meta = path + "/meta.json";
         Promise.all([
             this.submitS3(f_red, n_red),
             this.submitS3(f_green, n_green),
+            this.submitS3(f_meta, n_meta),
         ]).then(function (_) {
-            return _this.submitForm({
-                'formtype': 'modification',
-                'assignmentId': _this.assignmentId,
-                'frameId': _this.frameId,
-                'objectId': _this.objectId,
-                'videoId': _this.videoId,
-                'height': _this.height,
-                'width': _this.width,
-                'redfilepath': n_red,
-                'greenfilepath': n_green,
-            }, _this.destination);
+            return _this.submitForm(metadata, _this.destination);
         });
     };
     ConfigService.prototype.submitS3 = function (file, path) {
@@ -715,8 +720,6 @@ var DrawableCanvasComponent = (function () {
         this.ctx = this.canvas.getContext('2d');
     };
     DrawableCanvasComponent.prototype.dragStart = function (e) {
-        console.log("this method called");
-        console.log(this.ctx);
         this.dragging = true;
         this.ctx.lineWidth = this.brushSize;
         var color = this.brushColor;
@@ -745,13 +748,9 @@ var DrawableCanvasComponent = (function () {
         this.dragging = false;
         this.pts.length = 0;
     };
-    Object.defineProperty(DrawableCanvasComponent.prototype, "image", {
-        get: function () {
-            return this.ctx.getImageData(0, 0, this.width, this.height);
-        },
-        enumerable: true,
-        configurable: true
-    });
+    DrawableCanvasComponent.prototype.image = function () {
+        return this.ctx.getImageData(0, 0, this.width, this.height);
+    };
     __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Input */])(), 
         __metadata('design:type', Number)
@@ -812,10 +811,8 @@ var ModificationLayerComponent = (function () {
         });
         this.control = control;
     }
-    ModificationLayerComponent.prototype.ngOnInit = function () {
-    };
     ModificationLayerComponent.prototype.submit = function () {
-        var image = this.control.reciever.image;
+        var image = this.control.reciever.image();
         this.config.submitModification(image);
     };
     ModificationLayerComponent = __decorate([
@@ -842,17 +839,17 @@ var ModificationLayerComponent = (function () {
 function imgdata2mask(img) {
     var rgba = img.data;
     var size = img.height * img.width;
-    var red = new Uint8Array(size / 4);
-    var green = new Uint8Array(size / 4);
+    var red = new Uint8Array(Math.ceil(size / 8));
+    var green = new Uint8Array(Math.ceil(size / 8));
+    var store_red = 0;
+    var store_green = 0;
     for (var i = 0; i < size; i++) {
-        var j = Math.floor(i / 8);
-        var k = 7 - (i % 8);
-        if (img.data[i * 4] > 0) {
-            red[j] += 1 << k;
-        }
-        if (img.data[i * 4 + 1] > 0) {
-            green[j] += 1 << k;
-        }
+        var div = Math.trunc(i / 8);
+        var rem = i % 8;
+        var r = +(rgba[i * 4 + 0] > 0);
+        red[div] += r << rem;
+        var g = +(rgba[i * 4 + 1] > 0);
+        green[div] += g << rem;
     }
     return [red, green];
 }
