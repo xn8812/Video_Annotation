@@ -10,7 +10,7 @@ module.exports = ""
 /***/ 1171:
 /***/ function(module, exports) {
 
-module.exports = ""
+module.exports = "\n"
 
 /***/ },
 
@@ -31,7 +31,7 @@ module.exports = "canvas{\n    cursor: default;\n}\n"
 /***/ 1174:
 /***/ function(module, exports) {
 
-module.exports = ".center{\n    text-align: center;\n    margin-top: 5px;\n    margin-bottom: 5px;\n}\n.canvas-layer{\n    position: relative;\n}\n.canvas-layer base-image{\n    position: absolute;\n}\n.canvas-layer drawable-canvas{\n    position: absolute;\n    opacity: 0.5;\n}\n"
+module.exports = ".center{\n    text-align: center;\n    margin-top: 5px;\n    margin-bottom: 5px;\n}\n.canvas-layer{\n    position: relative;\n    display: inline-block;\n}\n.canvas-layer base-image{\n    position: absolute;\n    left: 0;\n}\n.canvas-layer drawable-canvas{\n    position: absolute;\n    opacity: 0.5;\n    left: 0;\n}\n"
 
 /***/ },
 
@@ -73,7 +73,7 @@ module.exports = "<canvas #canvas [height]=\"height\" [width]=\"width\" (mouseup
 /***/ 1180:
 /***/ function(module, exports) {
 
-module.exports = "\n<div class=\"center\">\n    <app-control-bar></app-control-bar>\n</div>\n<div class=\"canvas-layer center\" [style.width.px]=\"width\" [style.height.px]=\"height\">\n    <base-image [height]=\"height\" [width]=\"width\"></base-image>\n    <drawable-canvas [height]=\"height\" [width]=\"width\"></drawable-canvas>\n</div>\n<div class=\"center\">\n    <button mdl-button mdl-ripple (click)=\"submit($event)\">\n        <span>SUBMIT</span>\n    </button>\n</div>\n<p class=\"center introduction\">\n    Please modify the annotation for the boundary outlined with green color. There is also a grey boundary with text label to help you.<br/>\n    For <strong>background</strong> area the segmentation wrongly included, drag the mouse to paint the correspinding area to <span style=\"color: red\">red</span><br>\n    For <strong>foreground</strong> area the segmentation wrongly excluded, click the switch to use green paint, and drag the mouse to paint the correspinding area <span style=\"color: green\">green</span><br>\n    Click <strong>SUBMIT</strong> below the image to submit<br>\n    Click <strong>RESET</strong> if you want to restart the annotation<br>\n    You could also adjust the brush size with the slider to obtain coarser or finer stroke.\n</p>\n\n"
+module.exports = "\n<div class=\"center\">\n    <app-control-bar></app-control-bar>\n</div>\n<div class=\"center\">\n    <div class=\"canvas-layer\" [style.width.px]=\"width\" [style.height.px]=\"height\">\n        <base-image [height]=\"height\" [width]=\"width\"></base-image>\n        <drawable-canvas [height]=\"height\" [width]=\"width\"></drawable-canvas>\n    </div>\n</div>\n<div class=\"center\">\n    <button mdl-button mdl-ripple (click)=\"submit($event)\">\n        <span>SUBMIT</span>\n    </button>\n</div>\n<p class=\"center introduction\">\n    Please modify the annotation for the boundary outlined with green color. There is also a grey boundary with text label to help you.<br/>\n    For <strong>background</strong> area the segmentation wrongly included, drag the mouse to paint the correspinding area to <span style=\"color: red\">red</span><br>\n    For <strong>foreground</strong> area the segmentation wrongly excluded, click the switch to use green paint, and drag the mouse to paint the correspinding area <span style=\"color: green\">green</span><br>\n    Click <strong>SUBMIT</strong> below the image to submit<br>\n    Click <strong>RESET</strong> if you want to restart the annotation<br>\n    You could also adjust the brush size with the slider to obtain coarser or finer stroke.\n</p>\n\n"
 
 /***/ },
 
