@@ -1,86 +1,114 @@
 webpackJsonp([0,3],{
 
-/***/ 1170:
-/***/ function(module, exports) {
-
-module.exports = ""
-
-/***/ },
-
-/***/ 1171:
-/***/ function(module, exports) {
-
-module.exports = "\n"
-
-/***/ },
-
 /***/ 1172:
 /***/ function(module, exports) {
 
-module.exports = ":host {\n    display: block;\n}\n\n.component {\n    display: inline-block;\n    margin-right: 5px;\n}\n\n/deep/ #ground-switcher mdl-switch .mdl-switch__track {\n    background-color: rgba(244, 54, 72, 0.5);\n}\n\n/deep/ #ground-switcher mdl-switch .mdl-switch__thumb {\n    background-color: rgba(244, 54, 72, 1);\n}\n\n/deep/ #ground-switcher mdl-switch.is-checked .mdl-switch__track{\n    background-color: rgba(114, 181, 63, 0.5);\n}\n\n/deep/ #ground-switcher mdl-switch.is-checked .mdl-switch__thumb{\n    background-color: rgba(114, 181, 63, 1);\n}\n"
+module.exports = "button.mdl-button {\n    line-height: initial;\n}\n"
 
 /***/ },
 
 /***/ 1173:
 /***/ function(module, exports) {
 
-module.exports = "canvas{\n    cursor: default;\n}\n"
+module.exports = ":host{\n    position: relative;\n}\n\ncanvas{\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: -100;\n}\n\nimg.svg-annotation{\n    position: absolute;\n    right: 5px;\n    bottom: 5px;\n    z-index: 500 !important;\n}\n\nimg.draw{\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n"
 
 /***/ },
 
 /***/ 1174:
 /***/ function(module, exports) {
 
-module.exports = ".center{\n    text-align: center;\n    margin-top: 5px;\n    margin-bottom: 5px;\n}\n.canvas-layer{\n    position: relative;\n    display: inline-block;\n}\n.canvas-layer base-image{\n    position: absolute;\n    left: 0;\n}\n.canvas-layer drawable-canvas{\n    position: absolute;\n    opacity: 0.5;\n    left: 0;\n}\n"
+module.exports = ":host {\n    display: block;\n}\n\n.component {\n    display: inline-block;\n    margin-right: 5px;\n}\n\n/deep/ #ground-switcher mdl-switch .mdl-switch__track {\n    background-color: rgba(244, 54, 72, 0.5);\n}\n\n/deep/ #ground-switcher mdl-switch .mdl-switch__thumb {\n    background-color: rgba(244, 54, 72, 1);\n}\n\n/deep/ #ground-switcher mdl-switch.is-checked .mdl-switch__track{\n    background-color: rgba(114, 181, 63, 0.5);\n}\n\n/deep/ #ground-switcher mdl-switch.is-checked .mdl-switch__thumb{\n    background-color: rgba(114, 181, 63, 1);\n}\n"
 
 /***/ },
 
 /***/ 1175:
 /***/ function(module, exports) {
 
-module.exports = ".center{\n    text-align: center;\n    margin-top: 5px;\n    margin-bottom: 5px;\n}\n"
+module.exports = "canvas{\n    cursor: default;\n}\n"
 
 /***/ },
 
 /***/ 1176:
 /***/ function(module, exports) {
 
-module.exports = "<mdl-layout mdl-fixed-header>\n    <mdl-layout-header>\n        <mdl-layout-header-row>\n            <mdl-layout-title>Amazon Turk Annotation Test</mdl-layout-title>\n        </mdl-layout-header-row>\n    </mdl-layout-header>\n    <mdl-layout-content>\n        <modification-layer *ngIf=\"isPage('modification')\"></modification-layer>\n        <verification-layer *ngIf=\"isPage('verification')\"></verification-layer>\n    </mdl-layout-content>\n</mdl-layout>\n"
+module.exports = ".wrapper{\n    position: relative;\n    margin: auto;\n}\n"
 
 /***/ },
 
 /***/ 1177:
 /***/ function(module, exports) {
 
-module.exports = "\n<canvas #canvas [height]=\"height\" [width]=\"width\"></canvas>\n"
+module.exports = ".center{\n    text-align: center;\n    margin-top: 5px;\n    margin-bottom: 5px;\n}\n.canvas-layer{\n    position: relative;\n    display: inline-block;\n}\n.canvas-layer base-image{\n    position: absolute;\n    left: 0;\n}\n.canvas-layer drawable-canvas{\n    position: absolute;\n    opacity: 0.5;\n    left: 0;\n}\n"
 
 /***/ },
 
 /***/ 1178:
 /***/ function(module, exports) {
 
-module.exports = "<button mdl-button mdl-button-type=\"raised\" mdl-ripple\n    (click)=\"reset()\">\n    RESET\n</button>\n\n<span>\n    brush size: {{brushSize}}\n</span>\n<div id=\"slider-bar\" class=\"component\">\n    <mdl-slider min=\"2\" max=\"20\" [(ngModel)]=\"brushSize\"\n        (ngModelChange)=\"setSize($event)\"></mdl-slider>\n</div>\n<svg height=\"30px\" width=\"30px\" class=\"component\">\n    <circle cx=\"50%\" cy=\"50%\"\n    [attr.r]=\"brushSize\" [attr.fill]=\"groundColor(groundChecked)\"></circle>\n</svg>\n<div id=\"ground-switcher\" class=\"component\">\n    <mdl-switch [(ngModel)]=\"groundChecked\" mdl-ripple\n        (ngModelChange)=\"setGround($event)\"></mdl-switch>\n    <span>\n        {{groundText(groundChecked)}}\n    </span>\n</div>\n"
+module.exports = ".wrapper{\n    position: relative;\n    margin: auto;\n}\n"
 
 /***/ },
 
 /***/ 1179:
 /***/ function(module, exports) {
 
-module.exports = "<canvas #canvas [height]=\"height\" [width]=\"width\" (mouseup)=\"dragEnd($event)\" (mousedown)=\"dragStart($event)\" (mousemove)=\"dragMove($event)\"></canvas>\n"
+module.exports = ".center{\n    text-align: center;\n    margin-top: 5px;\n    margin-bottom: 5px;\n}\n.canvas-layer{\n    position: relative;\n    display: inline-block;\n}\n.canvas-layer base-image{\n    position: absolute;\n    left: 0;\n}\n.canvas-layer drawable-canvas{\n    position: absolute;\n    opacity: 0.5;\n    left: 0;\n}\n"
 
 /***/ },
 
 /***/ 1180:
 /***/ function(module, exports) {
 
-module.exports = "\n<div class=\"center\">\n    <app-control-bar></app-control-bar>\n</div>\n<div class=\"center\">\n    <div class=\"canvas-layer\" [style.width.px]=\"width\" [style.height.px]=\"height\">\n        <base-image [height]=\"height\" [width]=\"width\"></base-image>\n        <drawable-canvas [height]=\"height\" [width]=\"width\"></drawable-canvas>\n    </div>\n</div>\n<div class=\"center\">\n    <button mdl-button mdl-ripple (click)=\"submit($event)\">\n        <span>SUBMIT</span>\n    </button>\n</div>\n<p class=\"center introduction\">\n    Please modify the annotation for the boundary outlined with green color. There is also a grey boundary with text label to help you.<br/>\n    For <strong>background</strong> area the segmentation wrongly included, drag the mouse to paint the correspinding area to <span style=\"color: red\">red</span><br>\n    For <strong>foreground</strong> area the segmentation wrongly excluded, click the switch to use green paint, and drag the mouse to paint the correspinding area <span style=\"color: green\">green</span><br>\n    Click <strong>SUBMIT</strong> below the image to submit<br>\n    Click <strong>RESET</strong> if you want to restart the annotation<br>\n    You could also adjust the brush size with the slider to obtain coarser or finer stroke.\n</p>\n\n"
+module.exports = "<mdl-layout mdl-fixed-header>\n    <mdl-layout-header>\n        <mdl-layout-header-row>\n            <mdl-layout-title>Amazon Turk Annotation Test</mdl-layout-title>\n            <mdl-layout-spacer></mdl-layout-spacer>\n            <nav class=\"mdl-navigation\">\n                <button\n                    mdl-button\n                    mdl-button-type=\"raised\"\n                    (click)=\"toggleHelp()\"\n                    class=\"mdl-navigation__link\">\n                    {{onhelp? \"back\" : \"help\"}}\n                </button>\n            </nav>\n        </mdl-layout-header-row>\n    </mdl-layout-header>\n    <mdl-layout-content>\n        <modification-layer *ngIf=\"isPage('modification')\"></modification-layer>\n        <verification-layer *ngIf=\"isPage('verification')\"></verification-layer>\n        <modification-helper *ngIf=\"isPage('modification-help')\"></modification-helper>\n        <verification-helper *ngIf=\"isPage('verification-help')\"></verification-helper>\n\n    </mdl-layout-content>\n</mdl-layout>\n"
 
 /***/ },
 
 /***/ 1181:
 /***/ function(module, exports) {
 
-module.exports = "\n<div class=\"center\">\n    <base-image [height]=\"height\" [width]=\"width\"></base-image>\n</div>\n<div class=\"center\">\n    <button mdl-button mdl-ripple (click)=\"submit(true)\">YES</button>\n    <button mdl-button mdl-ripple (click)=\"submit(false)\">NO</button>\n</div>\n\n<p class=\"center introduction\">\n    Please determine if the quality annotation for the boundary outlined with green color is acceptable. There is also a grey boundary with text label to help you.<br>\n    Click <strong>YES</strong> if you think the boundary is acceptable<br>\n    Click <strong>No</strong> if you think the boundary needs further annotation<br>\n</p>\n"
+module.exports = "\n<canvas #canvas [height]=\"height\" [width]=\"width\"></canvas>\n<img class=\"draw\" alt=\"\" [src]=\"drawsrc\" [style.width.px]=\"width\" [style.height.px]=\"height\">\n<img class=\"svg-annotation\" alt=\"\" [src]=\"svgsrc\" [style.left.px]=\"width-100\" [style.top.px]=\"height-100\">\n"
+
+/***/ },
+
+/***/ 1182:
+/***/ function(module, exports) {
+
+module.exports = "<button mdl-button mdl-button-type=\"raised\" mdl-ripple\n    (click)=\"reset()\">\n    RESET\n</button>\n\n<span>\n    brush size: {{brushSize}}\n</span>\n<div id=\"slider-bar\" class=\"component\">\n    <mdl-slider min=\"2\" max=\"20\" [(ngModel)]=\"brushSize\"\n        (ngModelChange)=\"setSize($event)\"></mdl-slider>\n</div>\n<svg height=\"30px\" width=\"30px\" class=\"component\">\n    <circle cx=\"50%\" cy=\"50%\"\n    [attr.r]=\"brushSize\" [attr.fill]=\"groundColor(groundChecked)\"></circle>\n</svg>\n<div id=\"ground-switcher\" class=\"component\">\n    <mdl-switch [(ngModel)]=\"groundChecked\" mdl-ripple\n        (ngModelChange)=\"setGround($event)\"></mdl-switch>\n    <span>\n        {{groundText(groundChecked)}}\n    </span>\n</div>\n"
+
+/***/ },
+
+/***/ 1183:
+/***/ function(module, exports) {
+
+module.exports = "<canvas #canvas [height]=\"height\" [width]=\"width\" (mouseup)=\"dragEnd($event)\" (mousedown)=\"dragStart($event)\" (mousemove)=\"dragMove($event)\"></canvas>\n"
+
+/***/ },
+
+/***/ 1184:
+/***/ function(module, exports) {
+
+module.exports = "<p>\n    Here are some of the examples that we think are either as acceptable annotation or not. The reason is also given as below. Those annotation with a thumbup are acceptable annotation and those annotation with thumpdown are considered unacceptable ones.\n</p>\n<div class=\"mdl-grid\">\n    <div\n        class=\"mdl-cell mdl-cell--6-col\"\n        *ngFor=\"let example of examples\">\n    <div class=\"wrapper\"\n        [style.height.px] = \"example.height\"\n        [style.width.px] = \"example.width\">\n        <base-image\n        [videoId]=\"example.videoId\"\n        [assignmentId]=\"example.assignmentId\"\n        [objectId]=\"example.objectId\"\n        [frameId]=\"example.frameId\"\n        [height]=\"example.height\"\n        [width]=\"example.width\"\n        [icon]=\"example.icon\">\n    </base-image></div>\n    </div>\n</div>\n"
+
+/***/ },
+
+/***/ 1185:
+/***/ function(module, exports) {
+
+module.exports = "\n<div class=\"center\">\n    <app-control-bar></app-control-bar>\n</div>\n<div class=\"center\">\n    <div class=\"canvas-layer\" [style.width.px]=\"width\" [style.height.px]=\"height\">\n        <base-image [height]=\"height\" [width]=\"width\"></base-image>\n        <drawable-canvas [height]=\"height\" [width]=\"width\"></drawable-canvas>\n    </div>\n</div>\n<div class=\"center\">\n    <button mdl-button mdl-ripple (click)=\"submit($event)\" mdl-button-type=\"raised\">\n        <span>SUBMIT</span>\n    </button>\n</div>\n<p class=\"center introduction\">\n    Please modify the annotation for the boundary outlined with green color. There is also a grey boundary with text label to help you.<br/>\n    For <strong>background</strong> area the segmentation wrongly included, drag the mouse to paint the correspinding area to <span style=\"color: red\">red</span><br>\n    <img src=\"./assets/helper/switch-red.png\" alt=\"[red switch]\" style=\"height: 48px\"><br>\n    For <strong>foreground</strong> area the segmentation wrongly excluded, click the switch to use green paint, and drag the mouse to paint the correspinding area <span style=\"color: green\">green</span><br>\n    <img src=\"./assets/helper/switch-green.png\" alt=\"[green switch]\" style=\"height: 48px\"><br>\n    Click <strong>SUBMIT</strong> below the image to submit<br>\n    Click <strong>RESET</strong> if you want to restart the annotation<br>\n    You could also adjust the brush size with the slider to obtain coarser or finer stroke.<br>\n    <img src=\"./assets/helper/slider.png\" alt=\"[slider]\" style=\"height: 48px\"><br>\n</p>\n\n"
+
+/***/ },
+
+/***/ 1186:
+/***/ function(module, exports) {
+
+module.exports = "<p>\n    Here are some of the examples to show our expectation. The one with thumbup should be considered as \"YES\", and those with thumbdown should be considered as \"NO\"\n</p>\n<div class=\"mdl-grid\">\n    <div\n        class=\"mdl-cell mdl-cell--6-col\"\n        *ngFor=\"let example of examples\">\n    <div class=\"wrapper\"\n        [style.height.px] = \"example.height\"\n        [style.width.px] = \"example.width\">\n        <base-image\n        [videoId]=\"example.videoId\"\n        [objectId]=\"example.objectId\"\n        [frameId]=\"example.frameId\"\n        [height]=\"example.height\"\n        [width]=\"example.width\"\n        [icon]=\"example.icon\">\n    </base-image></div>\n    </div>\n</div>\n"
+
+/***/ },
+
+/***/ 1187:
+/***/ function(module, exports) {
+
+module.exports = "\n<div class =\"center\">\n    <div class=\"canvas-layer\" [style.width.px]=\"width\" [style.height.px]=\"height\">\n        <base-image [height]=\"height\" [width]=\"width\"></base-image>\n    </div>\n</div>\n<div class=\"center\">\n    <button mdl-button mdl-ripple (click)=\"submit(true)\" mdl-button-type=\"raised\">\n        YES\n    </button>\n    <button mdl-button mdl-ripple (click)=\"submit(false)\" mdl-button-type=\"raised\">\n        NO\n    </button>\n</div>\n\n<p class=\"center introduction\">\n    Please determine if the quality annotation for the boundary outlined with green color is acceptable. There is also a grey boundary with text label to help you.<br>\n    Click <strong>YES</strong> if you think the boundary is acceptable<br>\n    Click <strong>No</strong> if you think the boundary needs further annotation<br>\n</p>\n"
 
 /***/ },
 
@@ -90,15 +118,15 @@ module.exports = "\n<div class=\"center\">\n    <base-image [height]=\"height\" 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(279);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_aws_sdk__ = __webpack_require__(769);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_aws_sdk__ = __webpack_require__(771);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_aws_sdk___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_aws_sdk__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash__ = __webpack_require__(535);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_crypto_js__ = __webpack_require__(977);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_crypto_js__ = __webpack_require__(979);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_crypto_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_crypto_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs__ = __webpack_require__(1190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs__ = __webpack_require__(1196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_Utils__ = __webpack_require__(695);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_Utils__ = __webpack_require__(696);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ConfigService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -154,13 +182,18 @@ var ConfigService = (function () {
         });
         var _a;
     }
-    ConfigService.prototype.getFrameSrc = function () {
+    ConfigService.prototype.getFrameSrc = function (videoId, objectId, frameId) {
         var name = window.location.pathname.replace('index.html', '');
-        return name + "assets/" + this.videoId + "/" + this.objectId + "_" + this.frameId + ".png";
+        videoId = videoId || this.videoId;
+        objectId = objectId || this.objectId;
+        frameId = frameId || this.frameId;
+        return name + "assets/" + videoId + "/" + objectId + "_" + frameId + ".png";
     };
-    ConfigService.prototype.getBoundingSrc = function () {
+    ConfigService.prototype.getBoundingSrc = function (videoId, frameId) {
         var name = window.location.pathname.replace('index.html', '');
-        return name + "assets/" + this.videoId + "/00" + this.frameId + ".xml";
+        videoId = videoId || this.videoId;
+        frameId = frameId || this.frameId;
+        return name + "assets/" + videoId + "/00" + frameId + ".xml";
     };
     ConfigService.prototype.submitVerification = function (valid) {
         this.submitForm({
@@ -198,8 +231,7 @@ var ConfigService = (function () {
         var n_meta = path + "/meta.json";
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__utils_Utils__["a" /* toPromise */])(canvas.toBlob.bind(canvas), 'image/png', 1.0)
             .then(function (f_png) { return _this.submitS3(f_png, n_png); }).then(function (_) {
-            // this.submitForm(metadata, this.destination);
-            console.log(n_png);
+            _this.submitForm(metadata, _this.destination);
         });
         // Promise.all([
         //   this.submitS3(f_red, n_red),
@@ -254,21 +286,21 @@ var ConfigService = (function () {
 
 /***/ },
 
-/***/ 1481:
+/***/ 1487:
 /***/ function(module, exports) {
 
 /* (ignored) */
 
 /***/ },
 
-/***/ 1482:
+/***/ 1488:
 /***/ function(module, exports) {
 
 /* (ignored) */
 
 /***/ },
 
-/***/ 1483:
+/***/ 1489:
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(582);
@@ -330,11 +362,11 @@ webpackEmptyContext.id = 581;
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts__ = __webpack_require__(698);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts__ = __webpack_require__(700);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__polyfills_ts__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(668);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(697);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(699);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_app_module__ = __webpack_require__(689);
 
 
@@ -370,15 +402,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AppComponent = (function () {
     function AppComponent(config) {
         this.config = config;
+        this.onhelp = false;
     }
+    AppComponent.prototype.toggleHelp = function () {
+        this.onhelp = !this.onhelp;
+    };
     AppComponent.prototype.isPage = function (page) {
-        return this.config.page == page;
+        var helper = this.onhelp ? "-help" : "";
+        return this.config.page + helper == page;
     };
     AppComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-root',
-            template: __webpack_require__(1176),
-            styles: [__webpack_require__(1170)]
+            template: __webpack_require__(1180),
+            styles: [__webpack_require__(1172)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__config_service__["a" /* ConfigService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__config_service__["a" /* ConfigService */]) === 'function' && _a) || Object])
     ], AppComponent);
@@ -397,14 +434,16 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(279);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_mdl__ = __webpack_require__(701);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_mdl__ = __webpack_require__(703);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(688);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__control_bar_control_bar_component__ = __webpack_require__(692);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__drawable_canvas_drawable_canvas_component__ = __webpack_require__(693);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__modification_layer_modification_layer_component__ = __webpack_require__(694);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__modification_layer_modification_layer_component__ = __webpack_require__(695);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__base_image_base_image_component__ = __webpack_require__(690);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__config_service__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__verification_layer_verification_layer_component__ = __webpack_require__(696);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__verification_layer_verification_layer_component__ = __webpack_require__(698);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__verification_helper_verification_helper_component__ = __webpack_require__(697);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__modification_helper_modification_helper_component__ = __webpack_require__(694);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -415,6 +454,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
 
 
 
@@ -444,6 +485,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_8__modification_layer_modification_layer_component__["a" /* ModificationLayerComponent */],
                 __WEBPACK_IMPORTED_MODULE_9__base_image_base_image_component__["a" /* BaseImageComponent */],
                 __WEBPACK_IMPORTED_MODULE_11__verification_layer_verification_layer_component__["a" /* VerificationLayerComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__verification_helper_verification_helper_component__["a" /* VerificationHelperComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__modification_helper_modification_helper_component__["a" /* ModificationHelperComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["d" /* BrowserModule */],
@@ -487,13 +530,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var BaseImageComponent = (function () {
     function BaseImageComponent(config, http) {
         var _this = this;
+        this.assignmentId = "";
+        this.icon = "";
         this.config = config;
         this.http = http;
+        this.videoId = this.videoId || config.videoId;
+        this.objectId = this.objectId || config.objectId;
+        this.frameId = this.frameId || config.frameId;
         this.config.size.subscribe(function (size) {
             var width = size[0], height = size[1];
             _this.load(width, height);
         });
     }
+    Object.defineProperty(BaseImageComponent.prototype, "svgsrc", {
+        get: function () {
+            var name = window.location.pathname.replace('index.html', '');
+            if (this.icon == "")
+                return "";
+            return name + "assets/svgs/" + this.icon + ".svg";
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(BaseImageComponent.prototype, "drawsrc", {
+        get: function () {
+            var name = window.location.pathname.replace('index.html', '');
+            if (this.assignmentId) {
+                return name + "experimentdata/" + this.videoId + "-" + this.objectId + "-" + this.frameId + "-" + this.assignmentId;
+            }
+            else {
+                return "";
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
     BaseImageComponent.prototype.ngAfterViewInit = function () {
         this.ctx = this.canvasRef.nativeElement.getContext('2d');
         this.load(this.width, this.height);
@@ -501,14 +572,16 @@ var BaseImageComponent = (function () {
     BaseImageComponent.prototype.load = function (width, height) {
         var _this = this;
         var img = document.createElement('img');
-        img.src = this.config.getFrameSrc();
-        img.height = height;
-        img.width = width;
+        this.height = this.height || height;
+        this.width = this.width || width;
+        img.src = this.config.getFrameSrc(this.videoId, this.objectId, this.frameId);
+        img.height = this.height;
+        img.width = this.width;
         img.onload = function () {
             _this.ctx.drawImage(img, 0, 0, width, height);
-            _this.http.get(_this.config.getBoundingSrc())
+            _this.http.get(_this.config.getBoundingSrc(_this.videoId, _this.frameId))
                 .subscribe(function (res) {
-                var objectId = _this.config.objectId.replace('obj', '');
+                var objectId = _this.objectId.replace('obj', '');
                 var bound = __WEBPACK_IMPORTED_MODULE_3__bound__["a" /* Bound */].parseXML(res.text(), width, height, objectId);
                 bound.draw(_this.ctx);
             });
@@ -526,12 +599,32 @@ var BaseImageComponent = (function () {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Input */])(), 
         __metadata('design:type', Number)
     ], BaseImageComponent.prototype, "width", void 0);
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Input */])(), 
+        __metadata('design:type', String)
+    ], BaseImageComponent.prototype, "videoId", void 0);
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Input */])(), 
+        __metadata('design:type', String)
+    ], BaseImageComponent.prototype, "objectId", void 0);
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Input */])(), 
+        __metadata('design:type', String)
+    ], BaseImageComponent.prototype, "frameId", void 0);
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Input */])(), 
+        __metadata('design:type', String)
+    ], BaseImageComponent.prototype, "assignmentId", void 0);
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Input */])(), 
+        __metadata('design:type', String)
+    ], BaseImageComponent.prototype, "icon", void 0);
     BaseImageComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'base-image',
-            template: __webpack_require__(1177),
+            template: __webpack_require__(1181),
             /* viewProviders: [HTTP_PROVIDERS], */
-            styles: [__webpack_require__(1171)],
+            styles: [__webpack_require__(1173)],
         }), 
         __metadata('design:paramtypes', [(typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__config_service__["a" /* ConfigService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__config_service__["a" /* ConfigService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === 'function' && _c) || Object])
     ], BaseImageComponent);
@@ -682,8 +775,8 @@ var ControlBarComponent = (function () {
     ControlBarComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-control-bar',
-            template: __webpack_require__(1178),
-            styles: [__webpack_require__(1172)]
+            template: __webpack_require__(1182),
+            styles: [__webpack_require__(1174)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__control_service__["a" /* ControlService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__control_service__["a" /* ControlService */]) === 'function' && _a) || Object])
     ], ControlBarComponent);
@@ -779,8 +872,8 @@ var DrawableCanvasComponent = (function () {
     DrawableCanvasComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'drawable-canvas',
-            template: __webpack_require__(1179),
-            styles: [__webpack_require__(1173)]
+            template: __webpack_require__(1183),
+            styles: [__webpack_require__(1175)]
         }), 
         __metadata('design:paramtypes', [(typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__control_service__["a" /* ControlService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__control_service__["a" /* ControlService */]) === 'function' && _b) || Object])
     ], DrawableCanvasComponent);
@@ -792,6 +885,53 @@ var DrawableCanvasComponent = (function () {
 /***/ },
 
 /***/ 694:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ModificationHelperComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ModificationHelperComponent = (function () {
+    function ModificationHelperComponent() {
+        this.examples = [];
+        for (var i = 0; i < 10; i++) {
+            this.examples.push({
+                videoId: 'ILSVRC2015_val_00044010',
+                assignmentId: '',
+                frameId: '00' + (i * 4 + 10),
+                icon: i % 2 ? 'thumbdown' : 'thumbup',
+                objectId: 'obj0',
+                height: 337,
+                width: 600
+            });
+        }
+    }
+    ModificationHelperComponent.prototype.ngOnInit = function () {
+    };
+    ModificationHelperComponent = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
+            selector: 'modification-helper',
+            template: __webpack_require__(1184),
+            styles: [__webpack_require__(1176)]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], ModificationHelperComponent);
+    return ModificationHelperComponent;
+}());
+//# sourceMappingURL=/home/darwinsenior/workspace/segmentation/src/modification-helper.component.js.map
+
+/***/ },
+
+/***/ 695:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -827,8 +967,8 @@ var ModificationLayerComponent = (function () {
     ModificationLayerComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'modification-layer',
-            template: __webpack_require__(1180),
-            styles: [__webpack_require__(1174)],
+            template: __webpack_require__(1185),
+            styles: [__webpack_require__(1177)],
             providers: [__WEBPACK_IMPORTED_MODULE_1__control_service__["a" /* ControlService */]],
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__control_service__["a" /* ControlService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__control_service__["a" /* ControlService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__config_service__["a" /* ConfigService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__config_service__["a" /* ConfigService */]) === 'function' && _b) || Object])
@@ -840,7 +980,7 @@ var ModificationLayerComponent = (function () {
 
 /***/ },
 
-/***/ 695:
+/***/ 696:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -876,7 +1016,53 @@ function toPromise(fn) {
 
 /***/ },
 
-/***/ 696:
+/***/ 697:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return VerificationHelperComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var VerificationHelperComponent = (function () {
+    function VerificationHelperComponent() {
+        this.examples = [];
+        for (var i = 0; i < 10; i++) {
+            this.examples.push({
+                videoId: 'ILSVRC2015_val_00044010',
+                frameId: '000' + i,
+                icon: i % 2 ? 'thumbdown' : 'thumbup',
+                objectId: 'obj0',
+                height: 337,
+                width: 600
+            });
+        }
+    }
+    VerificationHelperComponent.prototype.ngOnInit = function () {
+    };
+    VerificationHelperComponent = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
+            selector: 'verification-helper',
+            template: __webpack_require__(1186),
+            styles: [__webpack_require__(1178)]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], VerificationHelperComponent);
+    return VerificationHelperComponent;
+}());
+//# sourceMappingURL=/home/darwinsenior/workspace/segmentation/src/verification-helper.component.js.map
+
+/***/ },
+
+/***/ 698:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -908,8 +1094,8 @@ var VerificationLayerComponent = (function () {
     VerificationLayerComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'verification-layer',
-            template: __webpack_require__(1181),
-            styles: [__webpack_require__(1175)],
+            template: __webpack_require__(1187),
+            styles: [__webpack_require__(1179)],
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__config_service__["a" /* ConfigService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__config_service__["a" /* ConfigService */]) === 'function' && _a) || Object])
     ], VerificationLayerComponent);
@@ -920,7 +1106,7 @@ var VerificationLayerComponent = (function () {
 
 /***/ },
 
-/***/ 697:
+/***/ 699:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -936,41 +1122,41 @@ var environment = {
 
 /***/ },
 
-/***/ 698:
+/***/ 700:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__ = __webpack_require__(834);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__ = __webpack_require__(836);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__ = __webpack_require__(827);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__ = __webpack_require__(829);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__ = __webpack_require__(823);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__ = __webpack_require__(825);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__ = __webpack_require__(829);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__ = __webpack_require__(831);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__ = __webpack_require__(828);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__ = __webpack_require__(830);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__ = __webpack_require__(826);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__ = __webpack_require__(828);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__ = __webpack_require__(825);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__ = __webpack_require__(827);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__ = __webpack_require__(833);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__ = __webpack_require__(835);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__ = __webpack_require__(822);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__ = __webpack_require__(824);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__ = __webpack_require__(821);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__ = __webpack_require__(823);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__ = __webpack_require__(831);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__ = __webpack_require__(833);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__ = __webpack_require__(824);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__ = __webpack_require__(826);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__ = __webpack_require__(832);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__ = __webpack_require__(834);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__ = __webpack_require__(830);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__ = __webpack_require__(832);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__ = __webpack_require__(835);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__ = __webpack_require__(837);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__ = __webpack_require__(1480);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__ = __webpack_require__(1486);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__);
 
 
@@ -992,5 +1178,5 @@ var environment = {
 
 /***/ }
 
-},[1483]);
+},[1489]);
 //# sourceMappingURL=main.bundle.map
